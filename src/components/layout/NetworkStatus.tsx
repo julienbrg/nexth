@@ -4,6 +4,8 @@ import { useBlockNumber, useNetwork } from 'wagmi'
 import { GetNetworkColor } from 'utils/network'
 import { LinkComponent } from './LinkComponent'
 import { THEME_COLOR_SCHEME } from 'utils/config'
+import { FaGithub, FaTwitter } from 'react-icons/fa'
+import { SITE_DESCRIPTION, SOCIAL_GITHUB, SOCIAL_TWITTER } from 'utils/config'
 
 export function NetworkStatus() {
   const block = useBlockNumber({ watch: true })
@@ -13,6 +15,9 @@ export function NetworkStatus() {
 
   return (
     <Flex alignItems="center" gap={2} zIndex={2} bgColor={bgColor} p={1}>
+      <LinkComponent href={`https://github.com/${SOCIAL_GITHUB}`}>
+        <FaGithub />
+      </LinkComponent>
       <Badge colorScheme={GetNetworkColor(network.chain?.network)} fontSize="2xs">
         {network.chain?.name ?? 'Ethereum'}
       </Badge>

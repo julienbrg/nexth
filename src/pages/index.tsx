@@ -16,6 +16,9 @@ export default function Home() {
           <ListItem>
             <LinkComponent href="/examples/siwe">Sign-in With Ethereum</LinkComponent>
           </ListItem>
+          <ListItem>
+            <LinkComponent href="/examples/mint">Mint an NFT</LinkComponent>
+          </ListItem>
         </UnorderedList>
       </main>
     </>

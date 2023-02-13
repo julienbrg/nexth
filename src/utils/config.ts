@@ -1,20 +1,20 @@
 import { ThemingProps } from '@chakra-ui/react'
-import { mainnet, goerli, sepolia, polygon, optimism, arbitrum } from '@wagmi/chains'
+import { goerli, arbitrumGoerli } from '@wagmi/chains'
 
-export const SITE_NAME = 'Nexth'
-export const SITE_DESCRIPTION = 'Next.js + Ethereum starter kit'
-export const SITE_URL = 'https://nexth.vercel.app'
-
-export const THEME_INITIAL_COLOR = 'system'
+export const SITE_NAME = 'Web3'
+export const SITE_DESCRIPTION = 'A Web3 app boilerplate'
+export const SITE_URL = 'https://w3hc.org'
+export const THEME_INITIAL_COLOR = 'dark'
 export const THEME_COLOR_SCHEME: ThemingProps['colorScheme'] = 'gray'
 export const THEME_CONFIG = {
   initialColorMode: THEME_INITIAL_COLOR,
 }
 
-export const SOCIAL_TWITTER = 'wslyvh'
-export const SOCIAL_GITHUB = 'wslyvh/nexth'
+export const SOCIAL_TWITTER = 'julienbrg'
+export const SOCIAL_GITHUB = 'julienbrg/nexth'
 
-export const ETH_CHAINS = [mainnet, goerli, sepolia, polygon, optimism, arbitrum]
+export const ETH_CHAINS = [goerli, arbitrumGoerli]
+export const alchemyId = process.env.NEXT_PUBLIC_ARBITRUM_ALCHEMY_ID
 
 export const SERVER_SESSION_SETTINGS = {
   cookieName: SITE_NAME,

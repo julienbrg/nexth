@@ -1,41 +1,27 @@
-# Nexth
+# Nexth W3HC
 
-A Next.js + Ethereum starter kit to quickly ship Web3 Apps ⚡
+This repo was forked from [Nexth](https://github.com/wslyvh/nexth).
 
-![Nexth Readme Image](./readme.png)
+## Install
 
-## Getting Started 👀
-
-Check-out the [example pages](./src/pages/examples/) or [live demo](https://nexth.vercel.app/) to see how you can use this starter kit.
-
-## Features ✅
-
-- [Next.js](https://nextjs.org/docs)
-- [Chakra UI](https://chakra-ui.com/)
-- [ethers.js](https://docs.ethers.org/)
-- [wagmi](https://wagmi.sh/)
-- [ConnectKit](https://docs.family.co/connectkit/)
-- [Sign-In with Ethereum](https://www.login.xyz/)
-- [usehooks-ts](https://usehooks-ts.com/)
-- [next-SEO](https://github.com/garmeeh/next-seo)
-
-## Developer Experience 🧰
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [eslint](https://eslint.org/)
-- [prettier](https://prettier.io/)
-- [Husky](https://typicode.github.io/husky/)
-
-## Development 🛠️
-
-```bash
-npm run dev
-# or
-yarn dev
+```sh
+npm i
 ```
 
-## Deploy on Vercel 🚢
+## Run
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=nexth&filter=next.js&utm_source=nexth&utm_campaign=nexth-readme) from the creators of Next.js.
+```sh
+npm run dev
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Latest build
+
+[https://bafybeidsuhh4dt56im27sywcv4qehylmhsmqvk5qxklltxw2xkg5lxngou.ipfs.w3s.link/](https://bafybeidsuhh4dt56im27sywcv4qehylmhsmqvk5qxklltxw2xkg5lxngou.ipfs.w3s.link/)
+
+## Support
+
+You can contact me via [Element](https://matrix.to/#/@julienbrg:matrix.org), [Telegram](https://t.me/julienbrg), [Twitter](https://twitter.com/julienbrg), [Discord](https://discord.gg/bHKJV3NWUQ), or [LinkedIn](https://www.linkedin.com/in/julienberanger/).
+
+## License
+
+[GPL-3.0](https://github.com/w3hc/w3hc-web/blob/main/LICENSE)

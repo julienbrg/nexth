@@ -1,13 +1,14 @@
 import React, { ReactNode } from 'react'
 import NextLink from 'next/link'
 import { Link, useColorModeValue } from '@chakra-ui/react'
-import { THEME_COLOR_SCHEME } from 'utils/config'
+import { THEME_COLOR_SCHEME } from '../../utils/config'
 
 interface Props {
   href: string
   children: ReactNode
   isExternal?: boolean
   className?: string
+  target?: string
 }
 
 export function LinkComponent(props: Props) {
@@ -24,7 +25,7 @@ export function LinkComponent(props: Props) {
   }
 
   return (
-    <Link as={NextLink} className={className} _hover={{ color: color }} href={props.href}>
+    <Link target={props.target} as={NextLink} className={className} _hover={{ color: color }} href={props.href}>
       {props.children}
     </Link>
   )

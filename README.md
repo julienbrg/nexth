@@ -1,6 +1,11 @@
-# Nexth W3HC
+# Another Star
 
 This repo was forked from [Nexth](https://github.com/wslyvh/nexth).
+
+It's a Web3 app boilerplate built with Next.js, Chakra UI, Ethers, Wagmi and ConnectKit.
+
+- Netlify: [https://another-star.netlify.app/](https://another-star.netlify.app/)
+- IPFS: [https://bafybeiaadcgdrw5pulupdykl4bmxayzx3yfqiipy73nvh5rf3rgtun47um.ipfs.w3s.link](https://bafybeiaadcgdrw5pulupdykl4bmxayzx3yfqiipy73nvh5rf3rgtun47um.ipfs.w3s.link)
 
 ## Install
 
@@ -13,10 +18,6 @@ npm i
 ```sh
 npm run dev
 ```
-
-## Latest build
-
-[https://bafybeidsuhh4dt56im27sywcv4qehylmhsmqvk5qxklltxw2xkg5lxngou.ipfs.w3s.link/](https://bafybeidsuhh4dt56im27sywcv4qehylmhsmqvk5qxklltxw2xkg5lxngou.ipfs.w3s.link/)
 
 ## Support
 

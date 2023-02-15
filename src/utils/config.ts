@@ -1,8 +1,8 @@
 import { ThemingProps } from '@chakra-ui/react'
 import { goerli, mainnet } from '@wagmi/chains'
 
-export const SITE_NAME = 'Nexth W3HC'
-export const SITE_DESCRIPTION = 'Nexth W3HC'
+export const SITE_NAME = 'Another Star'
+export const SITE_DESCRIPTION = 'A Web3 app boilerplate built with Next.js, Chakra UI, Ethers, Wagmi and ConnectKit'
 export const SITE_URL = 'https://w3hc.org'
 export const THEME_INITIAL_COLOR = 'dark'
 export const THEME_COLOR_SCHEME: ThemingProps['colorScheme'] = 'gray'

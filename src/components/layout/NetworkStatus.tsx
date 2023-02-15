@@ -20,7 +20,6 @@ export function NetworkStatus() {
       </LinkComponent>
       <Badge colorScheme={GetNetworkColor(network.chain?.network)} fontSize="2xs">
         {network.chain?.name ?? 'Ethereum'}
-        {/* {network.chain?.name + (network.chain?.name === 'homestead') ?? 'Ethereum Mainnet'} */}
       </Badge>
       {explorerUrl && (
         <LinkComponent href={explorerUrl}>

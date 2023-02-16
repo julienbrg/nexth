@@ -1,19 +1,16 @@
-import { Heading, ListItem, UnorderedList, Button } from '@chakra-ui/react'
+import { Heading, Button } from '@chakra-ui/react'
 import { Head } from '../components/layout/Head'
-import Image from 'next/image'
+// import Image from 'next/image'
 import { LinkComponent } from '../components/layout/LinkComponent'
 import { useState, useEffect } from 'react'
 import { useFeeData, useSigner, useAccount, useBalance, useNetwork } from 'wagmi'
 import { ethers } from 'ethers'
 import { NFT_CONTRACT_ADDRESS, NFT_CONTRACT_ABI } from '../lib/consts'
-import { ETH_CHAINS, SITE_NAME, alchemyId } from '../utils/config'
-import { configureChains, createClient, WagmiConfig } from 'wagmi'
-import { publicProvider } from 'wagmi/providers/public'
-import { provider } from 'src/providers/Web3'
+import useSound from 'use-sound' // https://www.joshwcomeau.com/react/announcing-use-sound-react-hook/
+const stevie = 'https://bafybeicxvrehw23nzkwjcxvsytimqj2wos7dhh4evrv5kscbbj6agilcsy.ipfs.w3s.link/another-star.mp3'
 
 export default function Home() {
   const [loading, setLoading] = useState<boolean>(false)
-  const [userAddress, setUserAddress] = useState<string>('')
   const [userBal, setUserBal] = useState<string>('')
   const [txLink, setTxLink] = useState<string>('')
 
@@ -30,6 +27,10 @@ export default function Home() {
   })
   const network = useNetwork()
 
+  const [play, { stop, pause }] = useSound(stevie, {
+    volume: 0.5,
+  })
+
   const explorerUrl = network.chain?.blockExplorers?.default.url
 
   const nft = new ethers.Contract(NFT_CONTRACT_ADDRESS, NFT_CONTRACT_ABI, signer)
@@ -37,7 +38,6 @@ export default function Home() {
   useEffect(() => {
     const val = Number(bal?.formatted).toFixed(3)
     setUserBal(String(val) + ' ' + bal?.symbol)
-    setUserAddress(address)
   }, [bal?.formatted, bal?.symbol, address])
 
   const checkFees = () => {
@@ -54,6 +54,7 @@ export default function Home() {
       console.log('tx:', nftReceipt)
       setTxLink(explorerUrl + '/tx/' + nftReceipt.transactionHash)
       setLoading(false)
+      play()
     } catch (e) {
       setLoading(false)
       console.log('error:', e)
@@ -101,11 +102,7 @@ export default function Home() {
         <Button colorScheme="blue" variant="outline" onClick={checkFees}>
           Check fees
         </Button> */}
-        {/* <br />
-        <br />
-        <Button colorScheme="red" variant="outline" onClick={getBal}>
-          Get balance
-        </Button> */}
+
         {txLink && (
           <>
             <br />
@@ -119,7 +116,11 @@ export default function Home() {
         )}
         <br />
         <br />
-
+        {txLink && (
+          <Button colorScheme="red" variant="outline" onClick={() => stop()}>
+            Stop the music
+          </Button>
+        )}
         {/* <Image height="800" width="800" alt="contract-image" src="/thistle-contract-feb-15-2023.png" /> */}
       </main>
     </>

@@ -69,17 +69,25 @@ export default function Home() {
         <Heading as="h2">Basic Minter</Heading>
         <br />
         <p>Welcome to Basic Minter!</p>
-        <br />
-        <p>You&apos;re about to mint 1 NFT on Ethereum Goerli Testnet.</p>
-        <br />
-        <p>
-          You&apos;re connected to <strong>Ethereum Goerli Testnet</strong> and your wallet currently holds
-          <strong> {userBal}</strong>. Just click on the &apos;Mint&apos; button below: you will be invited to sign your transaction.{' '}
-        </p>
 
-        {/* <p>
-          Only <strong>you</strong> can mint this NFT since you are the owner of the NFT smart contract.
-        </p> */}
+        {isDisconnected ? (
+          <>
+            <br />
+            <p>Please connect your wallet if you want to mint.</p>
+          </>
+        ) : (
+          <>
+            <br />
+
+            <p>You&apos;re about to mint 1 NFT on Ethereum Goerli Testnet.</p>
+            <br />
+            <p>
+              You&apos;re connected to <strong>Ethereum Goerli Testnet</strong> and your wallet currently holds
+              <strong> {userBal}</strong>. You can go ahead and click on the &apos;Mint&apos; button below: you will be invited to sign your
+              transaction.{' '}
+            </p>
+          </>
+        )}
 
         <br />
         {!loading ? (
@@ -97,11 +105,6 @@ export default function Home() {
             Mint
           </Button>
         )}
-        {/* <br />
-        <br />
-        <Button colorScheme="blue" variant="outline" onClick={checkFees}>
-          Check fees
-        </Button> */}
 
         {txLink && (
           <>

@@ -1,6 +1,8 @@
 import { Heading, Button } from '@chakra-ui/react'
 import { Head } from '../components/layout/Head'
 // import Image from 'next/image'
+import Link from 'next/link'
+
 import { LinkComponent } from '../components/layout/LinkComponent'
 import { useState, useEffect } from 'react'
 import { useFeeData, useSigner, useAccount, useBalance, useNetwork } from 'wagmi'
@@ -69,7 +71,6 @@ export default function Home() {
         <Heading as="h2">Basic Minter</Heading>
         <br />
         <p>Welcome to Basic Minter!</p>
-
         {isDisconnected ? (
           <>
             <br />
@@ -88,7 +89,6 @@ export default function Home() {
             </p>
           </>
         )}
-
         <br />
         {!loading ? (
           !txLink ? (
@@ -105,7 +105,6 @@ export default function Home() {
             Mint
           </Button>
         )}
-
         {txLink && (
           <>
             <br />
@@ -124,6 +123,9 @@ export default function Home() {
             Stop the music
           </Button>
         )}
+        <p style={{ color: 'red' }}>
+          <Link href="/hello">Hello page (test link)</Link>
+        </p>
         {/* <Image height="800" width="800" alt="contract-image" src="/thistle-contract-feb-15-2023.png" /> */}
       </main>
     </>

@@ -1,5 +1,5 @@
 import { ThemingProps } from '@chakra-ui/react'
-import { goerli, mainnet } from '@wagmi/chains'
+import { goerli } from '@wagmi/chains'
 
 export const SITE_NAME = 'Another Star'
 export const SITE_DESCRIPTION = 'A Web3 app boilerplate built with Next.js, Chakra UI, Ethers, Wagmi and ConnectKit'
@@ -13,7 +13,7 @@ export const THEME_CONFIG = {
 export const SOCIAL_TWITTER = 'W3HC'
 export const SOCIAL_GITHUB = 'w3hc/nexth'
 
-export const ETH_CHAINS = [goerli, mainnet]
+export const ETH_CHAINS = [goerli]
 export const alchemyId = process.env.NEXT_PUBLIC_ARBITRUM_ALCHEMY_ID
 
 export const SERVER_SESSION_SETTINGS = {

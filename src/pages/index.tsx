@@ -124,7 +124,10 @@ export default function Home() {
           </Button>
         )}
         <p style={{ color: 'red' }}>
-          <Link href="/hello">Hello page (test link)</Link>
+          <Link href="/hello">Hello page</Link>
+        </p>
+        <p style={{ color: 'purple' }}>
+          <Link href="/4337">4337</Link>
         </p>
         {/* <Image height="800" width="800" alt="contract-image" src="/thistle-contract-feb-15-2023.png" /> */}
       </main>

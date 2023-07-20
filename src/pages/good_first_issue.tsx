@@ -1,10 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useAccount } from 'wagmi'
 
 export default function GoodFirstIssue() {
   const [govData, setGovData] = useState(null);
   const [govUiData, setGovUiData] = useState(null);
   const [govDeployerData, setGovDeployerData] = useState(null);
+
+  const { isDisconnected } = useAccount()
 
   useEffect(() => {
     const fetchGovIssues = async () => {
@@ -37,16 +40,23 @@ export default function GoodFirstIssue() {
     fetchGovIssues();
     fetchGovUiIssues();
     fetchGovDeployerIssues();
-  }, []);
+
+  },[]);
 
   return (
+
+    isDisconnected ? (
+        <>
+          <br />
+          <p>Please connect your wallet if you want to see issues.</p>
+        </>
+      ) : (
     <div>
-      {govData && govUiData && govDeployerData ? (
         <div>
           {govData.length > 0 ? (
             govData.map((govIssue) => (
               <div key={govIssue.id}>
-                        <h1>{govIssue.title}</h1>
+                <h1>{govIssue.title}</h1>
               </div>
             ))
           ) : (
@@ -73,9 +83,6 @@ export default function GoodFirstIssue() {
             <p>Aucune données trouvé pour gov-ui.</p>
           )}
         </div>
-      ) : (
-        <p>Chargement des données...</p>
-      )}
     </div>
-  );
+  ));
 }

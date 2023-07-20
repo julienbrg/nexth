@@ -45,13 +45,8 @@ export default function GoodFirstIssue() {
 
   return (
 
-    isDisconnected ? (
-        <>
-          <br />
-          <p>Please connect your wallet if you want to see issues.</p>
-        </>
-      ) : (
     <div>
+      {govData && govUiData && govDeployerData ? (
         <div>
           {govData.length > 0 ? (
             govData.map((govIssue) => (
@@ -83,6 +78,9 @@ export default function GoodFirstIssue() {
             <p>Aucune données trouvé pour gov-ui.</p>
           )}
         </div>
+      ) : (
+        <p>Chargement des données...</p>
+      )}
     </div>
-  ));
+  );
 }
